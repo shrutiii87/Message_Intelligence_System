@@ -1,7 +1,10 @@
 # 📩 Message Intelligence System
 
+---
+
 <img width="1200" height="500" alt="674285014-6907dbcc-dcb3-49dc-b05e-1a951d5dcdb0" src="https://github.com/user-attachments/assets/7ce0d4b3-c18c-4e58-9a05-80a5b328b246" />
 
+---
 
 This project evaluates understanding of **supervised machine learning classification** with a focus on probability foundations (conditional probability, Bayes' Theorem), instance-based, margin-based and probabilistic classifiers (KNN, SVM, Naive Bayes), and model comparison with classification metrics. Students learn how to build a spam-vs-ham message classifier, analyse how hyperparameters and kernels change predictions, and choose the best model for a real-world deployment.
 
