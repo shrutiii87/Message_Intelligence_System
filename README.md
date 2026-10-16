@@ -1,7 +1,5 @@
 # 📩 Message Intelligence System
 
-
-
 <img width="1200" height="500" alt="674285014-6907dbcc-dcb3-49dc-b05e-1a951d5dcdb0" src="https://github.com/user-attachments/assets/7ce0d4b3-c18c-4e58-9a05-80a5b328b246" />
 
 ---
