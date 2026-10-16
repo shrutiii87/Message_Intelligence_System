@@ -20,7 +20,7 @@ Your task is to prepare the data, build a KNN baseline, tune it, compare it with
 
 ♻️ Workflow
 
-<img width="1200" height="600" alt="674330055-a2fa5e67-2a81-4852-879d-9a201407f9c5" src="https://github.com/user-attachments/assets/4770ebc4-2b52-4941-b29b-cf7dd0ae0edf" />
+<img width="1200" height="700" alt="674330055-a2fa5e67-2a81-4852-879d-9a201407f9c5" src="https://github.com/user-attachments/assets/4770ebc4-2b52-4941-b29b-cf7dd0ae0edf" />
 
 
 ---
