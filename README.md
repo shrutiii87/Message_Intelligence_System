@@ -29,6 +29,10 @@ Your task is to prepare the data, build a KNN baseline, tune it, compare it with
 
 [![Live App](https://img.shields.io/badge/🚀_Live_Demo-Open_App-FF4B4B?style=for-the-badge)](YOUR_LIVE_APP_LINK)
 
+
+<img width="800" height="420" alt="ezgif-7e2b668cae4b14e5" src="https://github.com/user-attachments/assets/b3d80847-2769-436a-8c83-b5d4f00a70a8" />
+
+
 ---
 
 # 📂 Project Files
