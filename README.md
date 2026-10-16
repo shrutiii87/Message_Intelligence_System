@@ -1,6 +1,7 @@
 # 📩 Message Intelligence System
 
----
+<img width="1200" height="500" alt="674285014-6907dbcc-dcb3-49dc-b05e-1a951d5dcdb0" src="https://github.com/user-attachments/assets/7ce0d4b3-c18c-4e58-9a05-80a5b328b246" />
+
 
 This project evaluates understanding of **supervised machine learning classification** with a focus on probability foundations (conditional probability, Bayes' Theorem), instance-based, margin-based and probabilistic classifiers (KNN, SVM, Naive Bayes), and model comparison with classification metrics. Students learn how to build a spam-vs-ham message classifier, analyse how hyperparameters and kernels change predictions, and choose the best model for a real-world deployment.
 
@@ -11,6 +12,13 @@ This project evaluates understanding of **supervised machine learning classifica
 You are working on a messaging platform's trust & safety team. The company holds a **message dataset** of 5,200 messages and wants a **Message Intelligence System** that can predict whether a message is **spam (1)** or **legitimate / ham (0)** from its text statistics, sender behaviour and timing attributes.
 
 Your task is to prepare the data, build a KNN baseline, tune it, compare it with an SVM and a Naive Bayes classifier, manually verify Bayes' Theorem on the data, evaluate all models with accuracy, precision, recall and F1, and deliver a final business recommendation for deployment.
+
+---
+
+♻️ Workflow
+
+<img width="265" height="150" alt="674330055-a2fa5e67-2a81-4852-879d-9a201407f9c5" src="https://github.com/user-attachments/assets/4770ebc4-2b52-4941-b29b-cf7dd0ae0edf" />
+
 
 ---
 
@@ -82,66 +90,10 @@ Your task is to prepare the data, build a KNN baseline, tune it, compare it with
 
 ---
 
-## 📚 Part A : Probability & Conceptual Foundation (Theory)
-
-### 1️⃣ What is Conditional Probability?
-
-Conditional probability is the probability that an event **A** occurs given that another event **B** has already occurred:
-
-**P(A|B) = P(A∩B) / P(B)**, with P(B) > 0
-
-💡 **Insight:** Knowing B shrinks the sample space to B alone, so we only count the part of A that falls inside it. In this project, the chance a message is spam changes once we see that it contains the word "free". 🎯
-
----
-
-### 2️⃣ Explain Bayes' Theorem and its importance in classification problems
-
-**P(C|x) = P(x|C) · P(C) / P(x)**
-
-- **Prior P(C)** — belief about the class before seeing data
-- **Likelihood P(x|C)** — how well the data fits the class
-- **Posterior P(C|x)** — updated belief; the classifier predicts the class with the highest value
-
-💡 **Insight:** P(x|C) is easy to estimate from labelled data, while P(C|x) is what we actually need. Example: P(spam)=0.30, P("free"|spam)=0.60, P("free"|ham)=0.05 gives P(spam|"free") = 0.18 / (0.18 + 0.035) ≈ **0.84**. 📊
-
----
-
-### 3️⃣ What assumptions does the Naive Bayes Classifier make?
-
-**P(C|x) ∝ P(C) · ∏ P(xᵢ|C)**
-
-- **Conditional independence** — given the class, every feature is independent of the others
-- **Equal contribution** — each feature is treated as equally important
-- **Known distribution** — features follow an assumed form (Gaussian, Multinomial or Bernoulli)
-- **Representative data** — training frequencies reflect real priors; Laplace smoothing avoids zero probabilities
-
-💡 **Insight:** These assumptions make Naive Bayes very fast, but they rarely hold exactly in real data. ⚖️
-
----
-
-### 4️⃣ Explain the working principle of KNN and SVM
-
-**K-Nearest Neighbors (KNN)** is a lazy, instance-based method: it stores all training data, measures the distance from a new message to every training point, picks the K closest, and assigns the class by majority vote. A small K is noisy, a large K is over-smoothed, and features must be scaled first.
-
-**Support Vector Machine (SVM)** finds the hyperplane that separates two classes with the **maximum margin**. Only the points closest to the boundary (the **support vectors**) define it, a soft margin (parameter C) tolerates a few errors, and the **kernel trick** (RBF, polynomial) separates non-linear classes.
-
-💡 **Insight:** KNN decides by similarity to stored examples, while SVM learns a compact boundary from a few critical points. 🎯
-
----
-
-### 5️⃣ Compare distance-based, probabilistic, and margin-based classifiers
-
-| | Distance-based (KNN) | Probabilistic (Naive Bayes) | Margin-based (SVM) |
-|---|---|---|---|
-| **Core idea** | Classify by similarity to stored examples | Classify by the most probable class using Bayes' rule | Classify using the widest-margin boundary |
-| **Learns** | Nothing (lazy learner) | Class priors and feature likelihoods | Support vectors and a hyperplane |
-| **Decision rule** | Majority vote of K nearest points | Class with highest posterior P(C\|x) | Sign of w·x + b |
-| **Strengths** | Simple, no training, handles non-linear shapes | Very fast, works with little data | Strong on high-dimensional data, good generalisation |
-| **Weaknesses** | Slow on large data, needs scaling | Independence assumption is rarely true | Slower to train, needs tuning of C and kernel |
-
----
-
 ## 🧠 Part B : Dataset Understanding & Preparation
+
+<img width="1200" height="500" alt="674287244-3817f86f-7fc5-4ed0-be28-264d287037a8" src="https://github.com/user-attachments/assets/03169966-549f-4be1-87e2-04f6ce770bfd" />
+
 
 ### 📋 Dataset Overview
 
@@ -202,6 +154,9 @@ X_train = scaler.fit_transform(X_train);   X_test = scaler.transform(X_test)
 
 ## 📊 Part C : Baseline Model – K-Nearest Neighbors
 
+<img width="1200" height="500" alt="674293061-71c75f96-2849-4dcb-9f50-9ad6baa8d6ee" src="https://github.com/user-attachments/assets/5d1d6522-41f2-4e06-bf3c-adbe48e5ff56" />
+
+
 ### 9️⃣ Implement K-Nearest Neighbors (KNN) classifier
 
 ```python
@@ -250,6 +205,9 @@ for metric in ['euclidean', 'manhattan', 'minkowski']:
 
 ## ⚙️ Part D : Support Vector Machine Classifier
 
+<img width="1200" height="500" alt="674303963-f0c3ddbd-315e-4f8c-848c-9edc12e9a0ea" src="https://github.com/user-attachments/assets/5ab4cd10-40c6-4451-a23c-a83503d28216" />
+
+
 ### 1️⃣3️⃣ Implement SVM with Linear kernel and RBF kernel
 
 ```python
@@ -285,6 +243,9 @@ svm_rbf    = SVC(kernel='rbf').fit(X_train, y_train)
 ---
 
 ## 🧮 Part E : Naive Bayes Classifier & Probability
+
+<img width="1200" height="500" alt="674306024-4e2ff5cf-add9-444c-934a-84a673d70403" src="https://github.com/user-attachments/assets/53dc25f2-0dcb-4f3c-ac56-2d96123284f6" />
+
 
 ### 1️⃣6️⃣ Implement Naive Bayes Classifier
 
@@ -334,6 +295,9 @@ p_legit_given_keyword = (p_keyword_legit * p_legit) / p_keyword
 
 ## 📈 Part F : Model Comparison & Evaluation
 
+<img width="1200" height="500" alt="674308176-aeb4e5a0-0fee-4901-8927-0d2218eb0137" src="https://github.com/user-attachments/assets/2367d974-5949-4ece-b9f9-269b34a3cffc" />
+
+
 ### 2️⃣0️⃣ Evaluate all models using Accuracy, Precision, Recall and F1 Score
 
 | Model | Accuracy | Precision | Recall | F1 Score |
@@ -357,48 +321,6 @@ p_legit_given_keyword = (p_keyword_legit * p_legit) / p_keyword
 **Output:** Highest Precision 0.9947 → **SVM** · Highest Recall 0.9692 → **SVM**
 
 💡 **Insight:** SVM is best on both metrics, so it keeps false alarms and missed spam lowest at the same time. 🏆
-
----
-
-## 📋 Part G : Final Analysis & Reporting
-
-### 2️⃣3️⃣ Final report summary
-
-**Strengths and weaknesses**
-
-| | KNN (K=5) | SVM (RBF) | Naive Bayes (Gaussian) |
-|---|---|---|---|
-| **Strengths** | Accuracy 98.65%, F1 96.32%; simple, no training step; stable for K=3–9 and across distance metrics; only 2 false alarms | Accuracy 99.33%, F1 98.18%, best on all four metrics; margin-based boundary generalises well | Accuracy 96.83%, F1 91.85%; very fast and lightweight; gives class probabilities; second-best recall (95.4%) |
-| **Weaknesses** | Lowest recall: 12 of 195 spam missed; must store all data; needs scaling | RBF model is harder to explain; needs tuning of C and kernel; costlier on very large data | Lowest precision: 24 legitimate messages flagged; independence and Gaussian assumptions do not hold |
-
-**Impact of probability assumptions in Naive Bayes**
-
-- **Correlated features:** `num_urls` with `num_digits` (0.71), `message_length` with `num_urls` (0.59) and `num_urls` with `messages_sent_last_24h` (0.55) — their evidence is counted twice.
-- **Non-Gaussian features:** `num_urls` is only 0 or 1, and `num_digits`, `hour_of_day` and `day_of_week` are discrete.
-- **Effect:** probabilities become over-confident — 92.8% of predictions are above 99% or below 1%, and mean confidence is 98.9% against 96.8% actual accuracy.
-
-**Trade-offs between interpretability and performance**
-
-- **Naive Bayes:** most transparent, but lowest F1 (91.85%).
-- **KNN:** easy to explain by example, but has no compact model and misses the most spam.
-- **SVM:** the RBF kernel is a black box (230 support vectors). The linear kernel reaches **99.42% accuracy** with readable weights — URLs (+2.63), messages sent in 24h (+2.57) and account age (−2.32) are the main drivers.
-
-**Errors on the 1,040 test messages**
-
-| Model | Missed spam (FN) | Legitimate blocked (FP) |
-|-------|------------------|-------------------------|
-| SVM | 6 | 1 |
-| KNN | 12 | 2 |
-| Naive Bayes | 9 | 24 |
-
-**Business recommendation**
-
-- ✅ **Deploy SVM** (linear kernel as the default) as the main filter — fewest errors in both directions.
-- ⚠️ **Keep Naive Bayes** only as a fast first pass or baseline; do not rely on its raw probabilities without calibration.
-- ❌ **Do not use KNN** in production — lowest recall and prediction cost grows with data.
-- 🛡️ **Reduce risk:** send messages near the decision margin to review, track both error types, retrain regularly and run a pilot first. The dataset is highly repetitive and the keyword scores were excluded, so live traffic may be harder.
-
-💡 **Insight:** On this data the interpretable linear SVM gives up nothing to the RBF kernel, so extra model complexity is not rewarded. 🚀
 
 ---
 
